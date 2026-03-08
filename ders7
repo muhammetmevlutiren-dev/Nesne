@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp15
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> asalSayilar = new List<int>();
+
+            int kontrolEdilecekSayi = 2;
+
+            while (asalSayilar.Count < 10)
+            {
+                bool asal = true;
+
+                for (int j = 2; j < kontrolEdilecekSayi; j++)
+                {
+                    if (kontrolEdilecekSayi % j == 0)
+                    {
+                        asal = false;
+                        break;
+                    }
+                }
+
+                if (asal)
+                {
+                    asalSayilar.Add(kontrolEdilecekSayi);
+                }
+
+                kontrolEdilecekSayi++;
+            }
+
+            Console.WriteLine("İlk 10 asal sayı:");
+
+            foreach (int asalSayi in asalSayilar)
+            {
+                Console.WriteLine(asalSayi);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+    
