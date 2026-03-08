@@ -1,0 +1,10 @@
+using System;
+class degiskenler
+{
+    static void Main()
+    {
+        byte a = 5;
+        byte b = 8;
+        Console.WriteLine(a + b);
+    }
+}
