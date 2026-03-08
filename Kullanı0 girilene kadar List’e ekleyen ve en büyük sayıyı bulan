@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> sayilar = new List<int>();
+
+            Console.WriteLine("Lütfen listeye eklemek için sayılar girin.");
+            Console.WriteLine("İşlemi bitirmek ve en büyük sayıyı görmek için '0' (sıfır) giriniz.\n");
+
+            while (true)
+            {
+                Console.Write("Bir sayı girin: ");
+                string kullaniciGirisi = Console.ReadLine();
+
+                if (int.TryParse(kullaniciGirisi, out int sayi))
+                {
+                    if (sayi == 0)
+                    {
+                        break;
+                    }
+
+                    sayilar.Add(sayi);
+                }
+                else
+                {
+                    Console.WriteLine("Hatalı giriş! Lütfen sadece tam sayı giriniz.");
+                }
+            }
+
+            if (sayilar.Count > 0)
+            {
+                int enBuyukSayi = sayilar.Max();
+
+                Console.WriteLine($"Listeye toplam {sayilar.Count} adet sayı eklediniz.");
+                Console.WriteLine($"Girdiğiniz sayılar arasındaki EN BÜYÜK sayı: {enBuyukSayi}");
+            }
+            else
+            {
+                Console.WriteLine("Listeye hiç sayı eklemediniz (İlk girişiniz 0 oldu).");
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+}
+
