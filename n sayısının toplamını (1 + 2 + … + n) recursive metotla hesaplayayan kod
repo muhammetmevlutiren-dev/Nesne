@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Lütfen n sayısını giriniz (Pozitif tam sayı): ");
+            string kullaniciGirisi = Console.ReadLine();
+
+            if (int.TryParse(kullaniciGirisi, out int n) && n > 0)
+            {
+                int sonuc = ToplamBul(n);
+
+                Console.WriteLine($"1'den {n}'e kadar olan sayıların toplamı: {sonuc}");
+            }
+            else
+            {
+                Console.WriteLine("Hatalı giriş! Lütfen 0'dan büyük pozitif bir tam sayı giriniz.");
+            }
+            Console.ReadKey();
+        }
+        static int ToplamBul(int n)
+        {
+            if (n == 1)
+            {
+                return 1;
+            }
+
+            return n + ToplamBul(n - 1);
+        }
+    }
+
+}
+
