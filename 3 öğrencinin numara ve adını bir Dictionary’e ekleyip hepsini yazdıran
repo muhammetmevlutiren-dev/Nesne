@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<int, string> ogrenciler = new Dictionary<int, string>();
+
+            ogrenciler.Add(101, "Ahmet Yılmaz");
+            ogrenciler.Add(102, "Ayşe Demir");
+            ogrenciler.Add(103, "Mehmet Çelik");
+
+            Console.WriteLine("Kayıtlı Öğrenciler Listesi");
+
+            foreach (KeyValuePair<int, string> ogrenci in ogrenciler)
+            {
+                Console.WriteLine($"Numara: {ogrenci.Key} \t Ad Soyad: {ogrenci.Value}");
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+}
+
