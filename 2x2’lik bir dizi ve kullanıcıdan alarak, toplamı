@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matris = new int[2, 2];
+            int toplam = 0;
+
+            Console.WriteLine("Lütfen 2x2 boyutundaki dizinin elemanlarını giriniz:\n");
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.Write($"Satır {i}, Sütun {j} ([{i},{j}]) elemanını girin: ");
+                    string kullaniciGirisi = Console.ReadLine();
+
+                    while (!int.TryParse(kullaniciGirisi, out matris[i, j]))
+                    {
+                        Console.Write("Geçersiz giriş! Lütfen sadece tam sayı girin: ");
+                        kullaniciGirisi = Console.ReadLine();
+                    }
+
+                    toplam += matris[i, j];
+                }
+            }
+
+            Console.WriteLine("Oluşturduğunuz 2x2 Matris Görünümü:\n");
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.Write(matris[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine($"\nDizideki tüm elemanların toplamı: {toplam}");
+
+            Console.WriteLine("\nÇıkmak için bir tuşa basın...");
+            Console.ReadKey();
+        }
+    }
+
+}
+
