@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("lütfen birinci sayiyi giriniz: ");
+            int sayi1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("lütfen ikinci sayiyi giriniz: ");
+            int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+            if (sayi2 == 0)
+            {
+                Console.WriteLine("Hata: bir sayı sıfıra bölünmez");
+            }
+            else
+            {
+                double kalan = sayi1 % sayi2;
+                Console.WriteLine($"{sayi1} sayisinn {sayi2} sayisindan kalan{kalan}");
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
