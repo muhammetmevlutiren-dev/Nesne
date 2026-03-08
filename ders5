@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Lütfen 1 ile 7 arasında bir gün numarası girin: ");
+            int gunSecimi = Convert.ToInt32(Console.ReadLine());
+            string gunAdi;
+
+            switch (gunSecimi)
+            {
+                case 1:
+                    gunAdi = "Seçtiğiniz gün: Pazartesi";
+                    break;
+                case 2:
+                    gunAdi = "Seçtiğiniz gün: Salı";
+                    break;
+                case 3:
+                    gunAdi = "Seçtiğiniz gün: Çarşamba";
+                    break;
+                case 4:
+                    gunAdi = "Seçtiğiniz gün: Perşembe";
+                    break;
+                case 5:
+                    gunAdi = "Seçtiğiniz gün: Cuma";
+                    break;
+                case 6:
+                    gunAdi = "Seçtiğiniz gün: Cumartesi";
+                    break;
+                case 7:
+                    gunAdi = "Seçtiğiniz gün: Pazar";
+                    break;
+                default:
+
+                    gunAdi = "Hata! Lütfen sadece 1 ile 7 arasında geçerli bir rakam girin.";
+                    break;
+            }
+
+            Console.WriteLine(gunAdi);
+
+            Console.ReadLine();
+        }
+    }
+}
