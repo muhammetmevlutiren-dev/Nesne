@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string devamMi;
+
+            do
+            {
+                Console.Clear();
+
+                Console.Write("Lütfen bir sayı giriniz: ");
+                string kullaniciGirisi = Console.ReadLine();
+
+                if (int.TryParse(kullaniciGirisi, out int sayi))
+                {
+                    if (sayi > 10)
+                    {
+                        Console.WriteLine("Girdiğiniz sayı 10'dan büyüktür.");
+                    }
+                    else if (sayi < 10)
+                    {
+                        Console.WriteLine("Girdiğiniz sayı 10'dan küçüktür.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Girdiğiniz sayı tam olarak 10'dur.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Hatalı giriş! Lütfen geçerli bir tam sayı giriniz.");
+                }
+
+                Console.Write("\nBaşka bir sayı kontrol etmek ister misiniz? (Evet için 'E', çıkmak için herhangi bir tuş): ");
+                devamMi = Console.ReadLine();
+
+            } while (devamMi.ToUpper() == "E");
+
+            Console.WriteLine("Program sonlandırılıyor. İyi çalışmalar!");
+            Console.ReadKey();
+        }
+    }
+
+ }
+
