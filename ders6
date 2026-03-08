@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp14
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Bir sayı girin: ");
+            int sayi = Convert.ToInt32(Console.ReadLine());
+            if (sayi < 2)
+            {
+                Console.WriteLine("2'den küçük asal sayı yoktur. Lütfen 2 veya daha büyük bir sayı girin.");
+            }
+            else
+            {
+                for (int i = 2; i <= sayi; i++)
+                {
+                    bool asal = true;
+
+                    for (int j = 2; j < i; j++)
+                    {
+                        if (i % j == 0)
+                        {
+                            asal = false;
+                            break;
+                        }
+                    }
+
+                    if (asal)
+                    {
+                        Console.Write(i + " asaldir \n");
+                    }
+                }
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
