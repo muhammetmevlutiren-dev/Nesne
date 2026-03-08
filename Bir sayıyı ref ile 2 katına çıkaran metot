@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int benimSayim = 15;
+
+            Console.WriteLine("--- ref Anahtar Kelimesi Kullanımı ---");
+            Console.WriteLine($"Metoda GÖNDERİLMEDEN ÖNCE benimSayim değişkeninin değeri: {benimSayim}");
+
+            IkiKatinaCikar(ref benimSayim);
+
+            Console.WriteLine($"Metottan DÖNDÜKTEN SONRA benimSayim değişkeninin değeri: {benimSayim}");
+
+            Console.ReadKey();
+        }
+
+        static void IkiKatinaCikar(ref int sayi)
+        {
+            sayi = sayi * 2;
+        }
+    }
+
+}
+
