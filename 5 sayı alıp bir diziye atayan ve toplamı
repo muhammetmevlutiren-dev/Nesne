@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] sayilar = new int[5];
+            int toplam = 0;
+
+            Console.WriteLine("Lütfen toplamak için 5 adet sayı giriniz:\n");
+
+            for (int i = 0; i < sayilar.Length; i++)
+            {
+                Console.Write($"{i + 1}. sayıyı girin: ");
+                string kullaniciGirisi = Console.ReadLine();
+
+                while (!int.TryParse(kullaniciGirisi, out sayilar[i]))
+                {
+                    Console.Write("Geçersiz giriş! Lütfen sadece sayı girerek tekrar deneyin: ");
+                    kullaniciGirisi = Console.ReadLine();
+                }
+
+                toplam += sayilar[i];
+            }
+            Console.WriteLine($"Girdiğiniz 5 sayının toplamı: {toplam}");
+            Console.WriteLine("\nÇıkmak için bir tuşa basın...");
+            Console.ReadKey();
+        }
+    }
+
+}
+
