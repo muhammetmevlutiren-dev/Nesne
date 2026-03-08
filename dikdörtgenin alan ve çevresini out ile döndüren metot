@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double kisaKenar = 5.0;
+            double uzunKenar = 10.0;
+
+            double hesaplananAlan;
+            double hesaplananCevre;
+
+            Console.WriteLine("--- Dikdörtgen Hesaplama (out ile) ---");
+            Console.WriteLine($"Kısa Kenar: {kisaKenar}, Uzun Kenar: {uzunKenar}");
+
+            AlanVeCevreHesapla(kisaKenar, uzunKenar, out hesaplananAlan, out hesaplananCevre);
+
+            Console.WriteLine($"\nDikdörtgenin Alanı: {hesaplananAlan}");
+            Console.WriteLine($"Dikdörtgenin Çevresi: {hesaplananCevre}");
+            Console.ReadKey();
+        }
+        static void AlanVeCevreHesapla(double kisa, double uzun, out double alan, out double cevre)
+        {
+            alan = kisa * uzun;
+            cevre = 2 * (kisa + uzun);
+        }
+    }
+
+}
+
