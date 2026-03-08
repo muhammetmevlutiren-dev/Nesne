@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //int a = 5;
+            //int b = 8;
+            //Console.WriteLine($"iki sayının toplamı = { a + b}");
+            //Console.WriteLine($"birinci sayi {a}, İkinci sayi {b}");
+           
+            Console.WriteLine("birinci sayi giriniz");
+            int sayi1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ikinci sayi giriniz");
+            int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+            if (sayi2==0)
+            {
+                Console.WriteLine("tanımısız");
+               
+            }
+            else if(sayi1 % sayi2 == 0)
+            {
+                Console.WriteLine("bölünebilir");
+            }
+            else
+            {
+                Console.WriteLine("bölünemiyor");
+            }
+
+
+
+
+        }
+    }
+}
