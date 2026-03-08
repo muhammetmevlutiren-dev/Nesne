@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("--- Sayının Karesini Hesaplama ---");
+            Console.Write("Lütfen karesi alınacak sayıyı giriniz: ");
+            string kullaniciGirisi = Console.ReadLine();
+
+            if (double.TryParse(kullaniciGirisi, out double sayi))
+            {
+                KaresiniYazdir(sayi);
+            }
+            else
+            {
+                Console.WriteLine("Hatalı giriş! Lütfen geçerli bir sayı giriniz.");
+            }
+            Console.ReadKey();
+        }
+        static void KaresiniYazdir(double sayi)
+        {
+            double kare = sayi * sayi;
+            Console.WriteLine($"{sayi} sayısının karesi: {kare}");
+        }
+    }
+
+}
+
