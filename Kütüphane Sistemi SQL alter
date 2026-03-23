@@ -1,0 +1,40 @@
+use KutuphaneSistemi
+
+create table Uyeler2(
+uyeNo int Primary Key identity(1,1) not null,
+uyeAdi nvarchar(100) not null,
+uyeSoyadi nvarchar(100) not null,
+cinsiyet char(2),
+telefon nvarchar(50),
+eposta nvarchar(50)
+);
+
+create table Adresler2(
+adresNo int Primary Key not null identity(1,1),
+sehir nvarchar(50) not null,
+mahalle nvarchar(50),
+binaNo int,
+postakodu int,
+ulke nvarchar(50) not null,
+cadde nvarchar(50)
+);
+create table Adresler3(
+adresNo int Primary Key not null identity(1,1),
+sehir nvarchar(50) not null,
+mahalle nvarchar(50),
+binaNo int,
+postakodu int,
+ulke nvarchar(50) not null,
+cadde nvarchar(50)
+);
+
+alter table Uyeler 
+add  adresNo INT 
+constraint "uyeler_adresler" 
+foreign key(adresNo) References Adresler(adresNo);
+
+alter table uyeler2 add adresNo int  foreign key (adresNo) references Adresler2(adresNo)
+alter table uyeler2 alter column telefon int not null
+alter table uyeler2 drop column eposta
+
+drop table Adresler3
